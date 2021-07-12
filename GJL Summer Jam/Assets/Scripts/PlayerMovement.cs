@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public KeyCode sprintKey = KeyCode.LeftShift;
     public float moveSpeed;
     public float runSpeedMultiplier;
     public float mouseSensitivity;
@@ -53,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
     private void MoveCheck()
     {
         //gets input from wasd or arrow keys. if left shift is active it uses running speed if not regular speed
-        float sideInput = Input.GetAxisRaw("Horizontal") * (Input.GetKey(KeyCode.LeftShift) ? moveSpeed * runSpeedMultiplier : moveSpeed);
-        float forwardInput = Input.GetAxisRaw("Vertical") * (Input.GetKey(KeyCode.LeftShift) ? moveSpeed * runSpeedMultiplier : moveSpeed);
+        float sideInput = Input.GetAxisRaw("Horizontal") * (Input.GetKey(sprintKey) ? moveSpeed * runSpeedMultiplier : moveSpeed);
+        float forwardInput = Input.GetAxisRaw("Vertical") * (Input.GetKey(sprintKey) ? moveSpeed * runSpeedMultiplier : moveSpeed);
 
         Vector3 movePos = transform.right * sideInput + transform.forward * forwardInput; 
         rb.AddForce(movePos);
