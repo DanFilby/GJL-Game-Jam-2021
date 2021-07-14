@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 3846476081504291423}
   - component: {fileID: 3684579343593894451}
   - component: {fileID: 1699122730559358144}
-  - component: {fileID: 2395929143869981869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2395929143869981869
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183904159262306953}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &490745050905186535
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +89,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3978774138198168243}
   - component: {fileID: 4232986419963690881}
-  m_Layer: 0
+  - component: {fileID: 33691812269428481}
+  m_Layer: 8
   m_Name: Base Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,6 +128,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cornerColour: {r: 1, g: 0, b: 0.7531109, a: 0}
   cornerParent: {fileID: 1647430340597388223}
+--- !u!65 &33691812269428481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490745050905186535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1647430340597388223
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3598995255268465656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 2152132237014997916}
   - component: {fileID: 978548663374583215}
   - component: {fileID: 5875378984733066584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'corner 7 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 4782411496416462272}
   - component: {fileID: 4096591882163112874}
   - component: {fileID: 14378705530604376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: corner 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 8881992694245149059}
   - component: {fileID: 7958062697262666890}
   - component: {fileID: 7524259200840962495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: corner 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 3530307932302098969}
   - component: {fileID: 6507229081044338291}
   - component: {fileID: 1612319542449674315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: corner 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 9017553688915828950}
   - component: {fileID: 5077572773223108177}
   - component: {fileID: 2782483602215361485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: corner 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 3000584957438823073}
   - component: {fileID: 1299674611218850496}
   - component: {fileID: 5559560422511729976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: corner 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 5522556322931158195}
   - component: {fileID: 4958090362017342193}
   - component: {fileID: 2621523774899168880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: corner 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,8 +743,7 @@ GameObject:
   - component: {fileID: 1227567533635742220}
   - component: {fileID: 3472937658499648432}
   - component: {fileID: 4409654358304491942}
-  - component: {fileID: 3079780129445081625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,19 +811,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3079780129445081625
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7265713948719289042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9148246884985853573
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,7 +822,7 @@ GameObject:
   - component: {fileID: 7300871870995273308}
   - component: {fileID: 2531910769248263793}
   - component: {fileID: 9114976756312145140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: corner 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
