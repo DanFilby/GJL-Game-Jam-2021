@@ -47,7 +47,7 @@ public class SwordControl : MonoBehaviour
             if (hit.gameObject.TryGetComponent<EnemyBase>(out EnemyBase enemy))
             {
                 gameObject.SetActive(false);
-                //TODO: kill enemy
+                enemy.Kill();
                 //TODO: break sword anim
             }
         }
