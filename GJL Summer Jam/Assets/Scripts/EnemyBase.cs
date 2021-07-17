@@ -15,9 +15,12 @@ public class EnemyBase : MonoBehaviour
     [Header("Attack Properties")]
     public GameObject enemySword;
     public GameObject swordPickupPrefab;
+    public LayerMask enemyHitLayers;
+    private Vector3 enemyDetecionBox;
     public float attackRate;
     public float attackTime;
     public float attackRange;
+    private float prevAttackTime;
 
     [Header("Movement Properties")]
     public Transform player;
@@ -39,6 +42,8 @@ public class EnemyBase : MonoBehaviour
         faceMat = enemyFace.GetComponent<Renderer>().material;
         faceOriginalColour = faceMat.color;
 
+        enemyDetecionBox = new Vector3(5, 5, 5);
+
     }  
 
 
@@ -46,6 +51,15 @@ public class EnemyBase : MonoBehaviour
     {
         ManageMovement();
         LookAtPlayer();
+
+        if(Physics.CheckBox(transform.position, enemyDetecionBox, Quaternion.identity, enemyHitLayers))
+        {
+            if(Time.time - prevAttackTime > attackRate)
+            {
+                StartCoroutine(Attack());
+                prevAttackTime = Time.time;
+            }
+        }
 
     }
 
@@ -88,6 +102,8 @@ public class EnemyBase : MonoBehaviour
 
     private IEnumerator Attack()
     {
+        //TODO: play attack sound
+
         faceMat.color = Color.Lerp(faceOriginalColour, Color.red, 0.33f);
 
         yield return new WaitForSeconds(attackTime / 2);
@@ -96,7 +112,13 @@ public class EnemyBase : MonoBehaviour
         yield return new WaitForSeconds(attackTime / 2);
         faceMat.color = Color.Lerp(faceOriginalColour, Color.red, 1);
 
+        Vector3 hitBoxExtends = new Vector3(attackRange, 10f, 3f);
+        Collider[] hits = Physics.OverlapBox(transform.position, hitBoxExtends, Quaternion.identity, enemyHitLayers);
 
+        foreach(Collider hit in hits)
+        {
+            Debug.Log(hit.gameObject.name);
+        }
 
         yield return null;
     }

@@ -147,6 +147,9 @@ MonoBehaviour:
   enemySword: {fileID: 9063246617649901202}
   swordPickupPrefab: {fileID: 7700293059907995713, guid: e59665b0ab960a54d868c6eb745d6623,
     type: 3}
+  enemyHitLayers:
+    serializedVersion: 2
+    m_Bits: 1024
   attackRate: 2.5
   attackTime: 1
   attackRange: 4

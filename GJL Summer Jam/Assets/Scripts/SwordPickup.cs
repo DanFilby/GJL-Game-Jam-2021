@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwordPickup : MonoBehaviour
 {
+    public Text pickupUI;
     public GameObject playerSword;
     public Transform pickUpPoint;
 
@@ -23,7 +25,7 @@ public class SwordPickup : MonoBehaviour
     {
         //each frame this checks the created hitbox for pickup swords
         if(Physics.CheckBox(pickUpPoint.position, boxSize, Quaternion.identity, swordPickupLayer)){
-            //TODO: UI when they can pickup sword
+            if (!pickupUI.IsActive()) { pickupUI.enabled = true; }
 
             //if the player picks it up
             if (Input.GetKeyDown(pickupKey)){
@@ -35,6 +37,8 @@ public class SwordPickup : MonoBehaviour
                 playerSword.SetActive(true);
             }
         }
+        else if (pickupUI.IsActive()) { pickupUI.enabled = false; }
+
     }
 
 
