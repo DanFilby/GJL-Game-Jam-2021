@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -117,10 +118,15 @@ public class EnemyBase : MonoBehaviour
 
         foreach(Collider hit in hits)
         {
-            Debug.Log(hit.gameObject.name);
+            if(hit.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
+            {
+                PlayerMovement.ToggleCursor(true);
+                SceneManager.LoadScene(1);
+            }
         }
 
-        yield return null;
+        yield return new WaitForSeconds(attackTime / 2);
+        faceMat.color = Color.white;
     }
 
 
@@ -129,6 +135,7 @@ public class EnemyBase : MonoBehaviour
     {
         //TODO: Death anim
         Instantiate(swordPickupPrefab, enemySword.transform.position, enemySword.transform.rotation);
+        GameController.KillAnEnemy();
         Destroy(gameObject);
     }
 

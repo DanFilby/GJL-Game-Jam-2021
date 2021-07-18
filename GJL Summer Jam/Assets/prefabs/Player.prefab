@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprintKey: 304
-  moveSpeed: 10
+  moveSpeed: 4500
   runSpeedMultiplier: 1.5
-  dashForceMultiplier: 1000
+  dashForceMultiplier: 2000
   dashRate: 1
   mouseSensitivity: 150
 --- !u!114 &3497418677634137435

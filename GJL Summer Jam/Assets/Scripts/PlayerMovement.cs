@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         float forwardInput = Input.GetAxisRaw("Vertical") * (Input.GetKey(sprintKey) ? moveSpeed * runSpeedMultiplier : moveSpeed);
 
         Vector3 movePos = transform.right * sideInput + transform.forward * forwardInput; 
-        rb.AddForce(movePos,ForceMode.Acceleration);
+        rb.AddForce(movePos * Time.deltaTime,ForceMode.Acceleration);
     }
 
     /// <summary>
